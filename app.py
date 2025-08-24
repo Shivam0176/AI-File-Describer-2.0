@@ -19,7 +19,8 @@ uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file:
     task = st.multiselect(                                                      #   MULTISELECT UI
         "Select Task you want to perform",
-        options
+        options,
+        accept_new_options=True
     )
     print(task)
 

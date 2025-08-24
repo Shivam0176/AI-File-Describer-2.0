@@ -22,7 +22,7 @@ def describe_File(file_path,task):
                     data=file_bytes,
                     mime_type=mime_type),
 
-                    f'{task} this file'
+                    f'{task}'
             ]
         )
         print(task)
