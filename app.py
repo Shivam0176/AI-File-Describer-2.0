@@ -27,17 +27,24 @@ if uploaded_file:
 
 
     if Generate_Button:
-        content = describe_File(uploaded_file,task)                                #pushing uploaded file and task to the function
-
-        if options == ['describe']:
+        if task == ['describe']:
             st.subheader("File Description")
-        elif options == ['caption']:
+        elif task == ['caption']:
             st.subheader("The Caption is")
-        elif options == ['summarize']:
+        elif task == ['summarize']:
             st.subheader("File Summary")
-        elif options == ['subtitle']:
+        elif task == ['subtitle']:
             st.subheader("Subtitles")
+        
+        
+        for file in uploaded_file:
+
+            content = describe_File(file,task)
+            st.write(content)    
+        # print(content)                                #pushing uploaded file and task to the function
+        # print("Now it's here")
 
 
 
-        st.write(content)                                                           #Writing the Content
+
+                                                               #Writing the Content
