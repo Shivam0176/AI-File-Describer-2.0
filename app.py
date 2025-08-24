@@ -13,21 +13,20 @@ options = ['describe','caption','summarize','subtitle']                 #task to
 st.set_page_config(page_title="AI File Describer",page_icon="🤖")           #Basic User Interface
 st.title("AI File Describer")
 st.write("Upload a file (image, video, pdf etc) and I'll describe it!")
-uploaded_file = st.file_uploader("Choose a file")
+uploaded_file = st.file_uploader("Choose a file",accept_multiple_files=True)        # File Uploader
 
 
 if uploaded_file:
-    task = st.multiselect(                                                      #   MULTISELECT UI
+    task = st.selectbox(                                                      #   SELECTBOX UI
         "Select Task you want to perform",
         options,
         accept_new_options=True
     )
     print(task)
+    Generate_Button = st.button("Generate")
 
-    if task == []:                                                                 #Pass if no task is Selected
-        pass
 
-    else:
+    if Generate_Button:
         content = describe_File(uploaded_file,task)                                #pushing uploaded file and task to the function
 
         if options == ['describe']:
