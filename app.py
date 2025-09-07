@@ -20,27 +20,20 @@ if uploaded_file:
         options,
         accept_new_options=True
     )
-    print(task)
     Generate_Button = st.button("Generate")
+    st.subheader("Hello this is a subheader")
 
 
     if Generate_Button:
-        if task == ['describe']:
-            st.subheader("File Description")
-        elif task == ['caption']:
-            st.subheader("The Caption is")
-        elif task == ['summarize']:
-            st.subheader("File Summary")
-        elif task == ['subtitle']:
-            st.subheader("Subtitles")
+        print(task)
+        if task in options:
+            st.subheader(task)
         
         
         for file in uploaded_file:
 
             content = describe_File(file,task)              #pushing uploaded file and task to the function
             st.write(content)                               #Writing the Content
-        # print(content)                                
-        # print("Now it's here")
 
 
 
