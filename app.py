@@ -4,8 +4,6 @@ from google import genai
 from google.genai import types
 import mimetypes
 
-GEMINI_API_KEY = "AIzaSyDwfBwNVK1zQ2zSYZg1u01aNMmIKEtLEIU"
-client = genai.Client(api_key=GEMINI_API_KEY)
 
 options = ['describe','caption','summarize','subtitle']                 #task to perform
 
@@ -39,12 +37,12 @@ if uploaded_file:
         
         for file in uploaded_file:
 
-            content = describe_File(file,task)
-            st.write(content)    
-        # print(content)                                #pushing uploaded file and task to the function
+            content = describe_File(file,task)              #pushing uploaded file and task to the function
+            st.write(content)                               #Writing the Content
+        # print(content)                                
         # print("Now it's here")
 
 
 
 
-                                                               #Writing the Content
+                                                               

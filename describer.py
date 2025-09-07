@@ -24,7 +24,7 @@ def describe_File(file,task):
                                         mime_type=mime_type)
             
 
-        input_data.append(f"Tash: {task}")
+        input_data.append(f"Task: {task}")
         print(input_data)
         print("File pointer 2nd position")
 
@@ -32,8 +32,8 @@ def describe_File(file,task):
             model='gemini-2.5-flash',
             contents=[part,f'{task}']
         )
-        print(task)
-        print("response genrated")
+        
+        print(f"response genrated for file : {file.name}")
         return response.text                                                #Returning the response
 
 
