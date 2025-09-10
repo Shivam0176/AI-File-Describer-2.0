@@ -3,6 +3,8 @@ from describer import describe_File
 from google import genai
 from google.genai import types
 import mimetypes
+from Keyword_extractor import Keyword_Extractor
+from searching_keywords import google_search
 
 
 options = ['describe','caption','summarize','subtitle']                 #task to perform
@@ -21,7 +23,6 @@ if uploaded_file:
         accept_new_options=True
     )
     Generate_Button = st.button("Generate")
-    st.subheader("Hello this is a subheader")
 
 
     if Generate_Button:
@@ -34,6 +35,19 @@ if uploaded_file:
 
             content = describe_File(file,task)              #pushing uploaded file and task to the function
             st.write(content)                               #Writing the Content
+            keywords = Keyword_Extractor(content)           #Extracting keywords from the content
+            results = google_search(keywords)               #Searching the keywords using Google search engine
+            if results:
+                print("="*30)
+
+                for i, item in enumerate(results):
+                    print(f"{i+1}. {item.get("title")}")
+                    print(f"     Link: {item.get('link')}")
+                    print(f"     Snippet:{item.get('snippet')}\n")
+
+            else:
+                print("No results found or an error occurred")
+
 
 
 

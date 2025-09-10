@@ -91,12 +91,13 @@ def Keyword_Extractor(text):
     print("\nTop 10 Ranked Phrases(Keywords) are:\n")
     keywords = ranked_phrases[:10]
 
-    for keyword in keywords:
-        print(keyword)
 
     return keywords
 
 if __name__ == "__main__":
-    Keyword_Extractor(text)
+    keywords = Keyword_Extractor(text)
+    print(keywords)
+    # for keyword in keywords:
+    #     print(keyword)
 
 
