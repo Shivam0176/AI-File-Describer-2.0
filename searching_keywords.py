@@ -1,8 +1,10 @@
 import os
 from googleapiclient.discovery import build
+from dotenv import dotenv_values
+env_vars = dotenv_values(".env")
 
-API_KEY = "AIzaSyDxupUzs-hnj9Y7mgVyhz5jVEzfYxm1BDA"
-CX = "f4d165e8248234d5a"
+API_KEY = env_vars.get("Google_Search_Engine_API_key")
+CX = env_vars.get("Engine_ID")
 
 def google_search(keywords, api_key=API_KEY, cx=CX, num_results=10):
 

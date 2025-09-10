@@ -2,8 +2,11 @@ from google.genai import types
 from google import genai
 import streamlit as st
 import mimetypes
+from dotenv import dotenv_values
+env_vars = dotenv_values(".env")
 
-GEMINI_API_KEY = "AIzaSyDwfBwNVK1zQ2zSYZg1u01aNMmIKEtLEIU"
+GEMINI_API_KEY = env_vars.get("GEMINI_API_KEY")
+
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 def describe_File(file,task):                                                
