@@ -1,2 +1,0 @@
-CSJA = AIzaSyDxupUzs-hnj9Y7mgVyhz5jVEzfYxm1BDA
-CX(Search Engine ID) = f4d165e8248234d5a

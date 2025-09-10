@@ -38,6 +38,11 @@ if uploaded_file:
             keywords = Keyword_Extractor(content)           #Extracting keywords from the content
             results = google_search(keywords)               #Searching the keywords using Google search engine
             if results:
+                st.sidebar.title("LINKS RELATED TO TOPIC")
+                for i,item in enumerate(results):
+                    st.sidebar.header(f"{i+1}. {item.get("title")}")
+                    st.sidebar.markdown(f"{item.get('snippet')}({item.get('link')})")
+
                 print("="*30)
 
                 for i, item in enumerate(results):
