@@ -1,2 +1,4 @@
 streamlit
 genai
+nltk
+rake_nltk
