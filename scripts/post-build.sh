@@ -1,10 +1,10 @@
-# scripts/post-build.sh
+#!/bin/sh
 
-# Install rustup with a recent nightly toolchain
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain nightly -y
+# Install rustup with the latest stable toolchain
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
-# Add cargo to the PATH for subsequent steps
+# Add cargo to the PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# Reinstall the python packages to leverage the new rust toolchain
+# Reinstall Python dependencies to use the new Rust toolchain
 pip install -r requirements.txt
