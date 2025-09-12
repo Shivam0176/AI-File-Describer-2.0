@@ -1,4 +1,6 @@
+# requirements.txt
 streamlit
-genai
+genai==2.1.0
+tiktoken==0.3.4 
 nltk
 rake_nltk
